@@ -2,12 +2,19 @@
 import {ref, reactive} from 'vue'
 
 defineProps(['message'])
+
+// Define an emitted event called messageEmitted 
+// in the ChildComponent using defineEmits.
 const emit = defineEmits(['messageEmitted'])
 
 const message_count = ref(1)
 
+// When a button is clicked in the ChildComponent, 
+// emit the messageEmitted event along with a custom message.
 const buttonClick = ()=>{
     emit('messageEmitted', `Custom message count is ${message_count.value}`)
+    // increase message_count variable to format a custom message
+    // everytime when we press click
     message_count.value = message_count.value + 1
 }
 </script>
@@ -20,6 +27,9 @@ const buttonClick = ()=>{
         <h1 class="text-2xl font-bold m-5 bg-white text-teal-700 p-2 border-b-4">ChildComponent.vue</h1>
         <span>Message from Parent:</span>
         <p class="bg-white text-black w-full text-center mt-5 p-10 rounded-3xl">
+            <!-- In the ChildComponent, 
+                display the received message from the parent component. 
+            -->
             {{ message }}
         </p>
         <div class="flex flex-col justify-center items-center sm:flex-row">

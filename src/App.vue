@@ -1,6 +1,6 @@
 <script setup>
 
-import { ref, reactive } from 'vue'
+import { ref } from 'vue'
 
 import ParentComponent from './components/ParentComponent.vue'
 

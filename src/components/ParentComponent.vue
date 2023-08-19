@@ -1,10 +1,16 @@
 <script setup>
-import {ref, reactive} from 'vue'
+import {ref} from 'vue'
 import ChildComponent from './ChildComponent.vue'
 
+// In the ParentComponent, define a prop called message 
+// using defineProps that will be passed to the ChildComponent.
 defineProps(['message'])
 
 const messageData = ref('')
+
+// In the ParentComponent, listen for the messageEmitted event 
+// emitted by the ChildComponent. 
+// Display the emitted message using $emit.
 const messageEmitted = (message) => {
     messageData.value = message
     console.log(message)
