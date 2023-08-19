@@ -36,7 +36,7 @@ const buttonClick = () => {
             </div>
             <div class="sm:w-1/2 flex flex-col justify-start items-center h-screen border-2">
                 <div class="m-10 bg-white text-gray-700 italic p-2 rounded-3xl text-center">
-                    When user click on the button, it will send emit then
+                    When user click on the button, it will emit the
                     `messageEmitted` event along with this custom message "{{ `Custom message count is ${message_count}` }}"
                 </div>
                 <div class="sm:w-1/2 sm:pl-10">
